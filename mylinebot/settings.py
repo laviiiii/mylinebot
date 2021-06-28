@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-1=-kru-+gt89#w4omf-1!(-1ex3bs9fc#^zlr!u#3zkak_h4ga
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    #'fcd32314fc58.ngrok.io'
-    'yinhousebot.herokuapp.com/'
+   '*'
+   # '35fb21d55f7c.ap.ngrok.io'
+   # 'yinhousebot.herokuapp.com/'
 ]
 
 
@@ -140,3 +141,8 @@ LINE_CHANNEL_SECRET = '14af0389de1592bc024dff62c9da8c99'
 
 # static set
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# set port
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
